@@ -1,0 +1,12 @@
+.wrapper {
+  max-width: var(--wrapper-width);
+  padding: 0 var(--wrapper-padding);
+  margin: 0 auto;
+}
+
+/* 1280px */
+@media (min-width: 80rem) {
+  .wrapper {
+    padding: 0;
+  }
+}
