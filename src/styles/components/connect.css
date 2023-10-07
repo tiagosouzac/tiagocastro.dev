@@ -1,0 +1,45 @@
+.connect {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--black);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.connect > strong {
+  margin-right: 0.5rem;
+  font-size: var(--text-md);
+  font-family: var(--space-grotesk);
+}
+
+.connect a {
+  line-height: 0;
+  transition: opacity 0.3s;
+}
+
+.connect a:hover {
+  opacity: var(--opacity);
+}
+
+.connect button {
+  transition: opacity 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.connect button span {
+  margin-left: 0.25rem;
+  margin-right: 0.75rem;
+}
+
+.connect button:hover {
+  opacity: var(--opacity);
+}
+
+@media (min-width: 480px) {
+  .connect {
+    width: max-content;
+    padding-right: 10rem;
+  }
+}
