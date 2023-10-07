@@ -1,0 +1,34 @@
+@import "../utils/infinite-scroll.css";
+
+.construction-notice {
+  padding: 0.5rem 0;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.construction-notice > div {
+  animation: infinite-scroll 10s linear infinite;
+  display: flex;
+  align-items: center;
+}
+
+.construction-notice span {
+  color: var(--white);
+  font-size: var(--text-sm);
+  font-family: var(--space-grotesk);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex: 1 0 calc(100% / 2);
+}
+
+@media (min-width: 640px) {
+  .construction-notice > div {
+    animation-duration: 20s;
+  }
+
+  .construction-notice span {
+    flex-basis: calc(100% / 3);
+  }
+}
