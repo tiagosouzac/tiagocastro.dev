@@ -1,0 +1,41 @@
+.not-found {
+  min-height: 80vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.not-found > strong {
+  font-family: var(--space-grotesk);
+}
+
+.not-found > strong:first-child {
+  font-size: var(--text-5xl);
+}
+
+.not-found > strong:not(:first-child) {
+  font-size: var(--text-2xl);
+}
+
+.not-found > a {
+  padding: 0.75rem 2rem;
+  margin-top: 5rem;
+  border-radius: var(--rounded-full);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--text-md);
+  font-family: var(--space-grotesk);
+  font-weight: 500;
+  transition: opacity 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.not-found > a:hover {
+  opacity: var(--opacity);
+}
+
+.not-found > a svg {
+  transform: rotate(90deg);
+}

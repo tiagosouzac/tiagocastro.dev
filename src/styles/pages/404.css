@@ -1,0 +1,7 @@
+@import "../reset.css";
+@import "../variables.css";
+
+/* COMPONENTS */
+@import "../components/wrapper.css";
+@import "../components/header.css";
+@import "../components/404.css";
