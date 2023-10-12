@@ -14,7 +14,7 @@ interface Content {
     };
     email: {
       label: string;
-      tooltip: string;
+      "copied-message": string;
     };
   };
 }
@@ -34,7 +34,7 @@ export default {
       },
       email: {
         label: "Copy email to clipboard",
-        tooltip: "Email copied to clipboard!",
+        "copied-message": "Email copied!",
       },
     },
   },
@@ -52,7 +52,7 @@ export default {
       },
       email: {
         label: "Copiar o e-mail para a área de transferência",
-        tooltip: "E-mail copiado para a área de transferência!",
+        "copied-message": "E-mail copiado!",
       },
     },
   },

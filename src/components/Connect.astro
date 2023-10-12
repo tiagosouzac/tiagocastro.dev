@@ -7,7 +7,7 @@ const lang = getLangFromUrl(Astro.url.pathname);
 const content = locales[lang];
 ---
 
-<section class="container">
+<section class="container pb-3">
   <strong class="text-xl font-space-grotesk font-bold">{content.label}</strong>
 
   <div class="mt-2 flex items-center gap-5">
@@ -40,10 +40,49 @@ const content = locales[lang];
 
     <button
       id="copy-email-button"
-      class="transition-opacity duration-300 relative hover:opacity-60"
+      class="transition-opacity duration-300 flex items-center gap-2 hover:opacity-60"
       aria-label={content.socials.email.label}
+      type="button"
     >
       <Icon id="email" width={32} height={32} />
+
+      <span
+        class="w-max text-sm flex items-center gap-1 aria-hidden:hidden"
+        aria-hidden="true"
+      >
+        {content.socials.email["copied-message"]}
+        <Icon id="check" width={16} height={16} />
+      </span>
     </button>
   </div>
 </section>
+
+<script>
+  let copiedMessageTimeoutId: number;
+
+  function emailCopiedSuccessfully(copiedMessage: HTMLSpanElement) {
+    copiedMessage?.setAttribute("aria-hidden", "false");
+
+    if (copiedMessageTimeoutId) clearTimeout(copiedMessageTimeoutId);
+
+    copiedMessageTimeoutId = setTimeout(
+      () => copiedMessage?.setAttribute("aria-hidden", "true"),
+      2000
+    ) as unknown as number;
+  }
+
+  async function copyEmailToClipboard(event: Event) {
+    const button = event.currentTarget as HTMLButtonElement;
+    const copiedMessage = button.querySelector("span") as HTMLSpanElement;
+
+    try {
+      await window.navigator.clipboard.writeText("tiagocastro602@gmail.com");
+      emailCopiedSuccessfully(copiedMessage);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const copyEmailButton = document.querySelector("#copy-email-button");
+  copyEmailButton?.addEventListener("click", copyEmailToClipboard);
+</script>
