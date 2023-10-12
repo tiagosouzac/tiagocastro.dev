@@ -1,0 +1,42 @@
+---
+import Icon from "@/components/Icon.astro";
+import { getLangFromUrl } from "@/locales/utils.ts";
+import locales from "@/locales/components/header.ts";
+
+const lang = getLangFromUrl(Astro.url.pathname);
+const content = locales[lang];
+---
+
+<header class="container pt-3 flex justify-between items-center">
+  <a
+    class="text-2xl font-space-grotesk font-bold transition-opacity duration-300 hover:opacity-60"
+    href="/"
+  >
+    tiagocastro
+  </a>
+
+  <div class="text-sm relative group">
+    <button
+      class="py-2 px-4 border border-black rounded-full flex items-center gap-1 transition-colors duration-300 hover:bg-black hover:text-white group-focus-within:bg-black group-focus-within:text-white"
+    >
+      <Icon id="translate" width={20} height={20} />
+
+      <span>{content.translate.pageLanguage}</span>
+    </button>
+
+    <div
+      class="w-full py-2 px-4 border border-black rounded-full mt-1 hidden absolute top-full group-focus-within:block"
+    >
+      {
+        content.translate.options.map((option) => (
+          <a
+            class="text-center transition-opacity duration-300 hover:opacity-60 block"
+            href={option.url}
+          >
+            {option.name}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</header>

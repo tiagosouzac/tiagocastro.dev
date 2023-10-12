@@ -1,0 +1,26 @@
+---
+import { getLangFromUrl } from "@/locales/utils.ts";
+import locales from "@/locales/components/presentation.ts";
+
+const lang = getLangFromUrl(Astro.url.pathname);
+const content = locales[lang];
+---
+
+<section class="container py-20 sm:py-40">
+  <div class="max-w-2xl">
+    <h1 class="mb-6 text-5xl font-space-grotesk font-bold sm:text-6xl">
+      {content.title}
+    </h1>
+
+    <p class="sm:text-lg">
+      {content.description}
+    </p>
+
+    <a
+      class="w-max py-3 px-8 mt-12 rounded-full bg-black text-lg text-white font-space-grotesk font-medium inline-block transition-opacity duration-300 hover:opacity-60"
+      href="#"
+    >
+      {content["explore-button"]}
+    </a>
+  </div>
+</section>

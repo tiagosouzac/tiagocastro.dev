@@ -1,0 +1,34 @@
+---
+import Layout from "@/layouts/Base.astro";
+
+import Header from "@/components/Header.astro";
+import Icon from "@/components/Icon.astro";
+---
+
+<Layout>
+  <Header />
+
+  <section class="py-36 grid justify-items-center content-center sm:py-52">
+    <h2 class="mb-2 text-6xl font-space-grotesk font-bold sm:text-7xl">404</h2>
+    <strong class="text-4xl font-space-grotesk font-medium">Not found</strong>
+
+    <a
+      id="go-back"
+      class="w-max py-3 px-8 mt-12 rounded-full bg-black text-lg text-white font-space-grotesk font-medium inline-flex items-center gap-2 transition-opacity duration-300 hover:opacity-60"
+      href="/"
+    >
+      <Icon id="arrow" class="rotate-90" width={20} height={20} />
+       Go back
+    </a>
+  </section>
+</Layout>
+
+<script>
+  function goBack(event: Event) {
+    event.preventDefault();
+    window.history.back();
+  }
+
+  const goBackButton = document.querySelector("#go-back");
+  goBackButton?.addEventListener("click", goBack);
+</script>

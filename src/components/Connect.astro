@@ -1,0 +1,49 @@
+---
+import Icon from "./Icon.astro";
+import { getLangFromUrl } from "@/locales/utils.ts";
+import locales from "@/locales/components/connect.ts";
+
+const lang = getLangFromUrl(Astro.url.pathname);
+const content = locales[lang];
+---
+
+<section class="container">
+  <strong class="text-xl font-space-grotesk font-bold">{content.label}</strong>
+
+  <div class="mt-2 flex items-center gap-5">
+    <a
+      class="transition-opacity duration-300 hover:opacity-60"
+      href="https://github.com/tiagosouzac"
+      target="_blank"
+      aria-label={content.socials.github.label}
+    >
+      <Icon id="github" width={32} height={32} />
+    </a>
+
+    <a
+      class="transition-opacity duration-300 hover:opacity-60"
+      href="https://www.linkedin.com/in/tiago-castro-a64096231/"
+      target="_blank"
+      aria-label={content.socials.linkedin.label}
+    >
+      <Icon id="linkedin" width={32} height={32} />
+    </a>
+
+    <a
+      class="transition-opacity duration-300 hover:opacity-60"
+      href="https://discordapp.com/users/355396756374159362"
+      target="_blank"
+      aria-label={content.socials.discord.label}
+    >
+      <Icon id="discord" width={32} height={32} />
+    </a>
+
+    <button
+      id="copy-email-button"
+      class="transition-opacity duration-300 relative hover:opacity-60"
+      aria-label={content.socials.email.label}
+    >
+      <Icon id="email" width={32} height={32} />
+    </button>
+  </div>
+</section>
