@@ -16,13 +16,13 @@ export default {
   en: {
     translate: {
       pageLanguage: "English",
-      options: [{ name: "Português", url: "/pt-br" }],
+      options: [{ name: "Português", url: "/pt-br/" }],
     },
   },
   "pt-br": {
     translate: {
       pageLanguage: "Português",
-      options: [{ name: "English", url: "/en" }],
+      options: [{ name: "English", url: "/en/" }],
     },
   },
 } satisfies LanguagesContent<Content>;
