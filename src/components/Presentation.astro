@@ -7,8 +7,10 @@ const content = locales[lang];
 ---
 
 <section class="container py-20 sm:py-40">
-  <div class="max-w-2xl">
-    <h1 class="mb-6 text-5xl font-space-grotesk font-bold sm:text-6xl">
+  <div class={`${lang === "en" ? "max-w-lg" : "max-w-xl"} md:max-w-2xl`}>
+    <h1
+      class="mb-6 text-5xl font-space-grotesk font-bold hyphens-auto [hyphenate-limit-chars:8] md:text-6xl"
+    >
       {content.title}
     </h1>
 

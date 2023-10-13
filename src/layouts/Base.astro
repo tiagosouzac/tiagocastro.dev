@@ -1,7 +1,9 @@
 ---
+import type { Languages } from "@/locales/utils.ts";
+
 interface Props {
   title?: string;
-  language?: "en" | "pt-br";
+  language?: Languages;
 }
 
 const { title = "Tiago Castro | Web Developer", language = "en" } = Astro.props;
