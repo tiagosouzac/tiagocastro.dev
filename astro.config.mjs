@@ -6,5 +6,13 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://tiagocastro.dev",
-  integrations: [tailwind(), sitemap()]
+  trailingSlash: "always",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "pt-br"],
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
+  integrations: [tailwind(), sitemap()],
 });
